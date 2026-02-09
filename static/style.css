@@ -1,0 +1,66 @@
+/* 기존 스타일은 유지하되 아래 내용을 보강하세요 */
+.transit-dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 지하철/버스 반반 배치 */
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 5px;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: space-between; /* 정보와 도착시간 양끝 배치 */
+}
+
+li:last-child { border-bottom: none; }
+
+/* 도착 예정 시간 강조 */
+.highlight {
+    color: #ff4757; /* 붉은색으로 눈에 띄게 */
+    font-weight: bold;
+}
+
+.status-tag {
+    font-size: 0.8rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: #e1f5fe;
+    color: #01579b;
+    margin-left: 5px;
+}
+
+/* 마감 전 팁: 지도가 안 나올 때를 대비한 '지도 미표시 알림' */
+#map:empty::before {
+    content: "📍 지도 데이터를 불러오는 중이거나, 서버 승인 대기 중입니다.";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: #eee;
+    color: #888;
+    font-size: 0.9rem;
+}
